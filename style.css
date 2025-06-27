@@ -1,0 +1,223 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+  color: #1e1e2f;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://www.transparenttextures.com/patterns/batthern.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+header.hero {
+  background: linear-gradient(120deg, #8e44ad, #3498db);
+  color: white;
+  text-align: center;
+  padding: 100px 30px;
+  animation: fadeInDown 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 80%);
+  z-index: 0;
+}
+
+header.hero h1 {
+  font-size: 3.5rem;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  background: linear-gradient(to right, #ffffff, #f7c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+header.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  color: #f0f8ff;
+  z-index: 1;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(to right, #f857a6, #ff5858);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1.5s ease-in;
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  border-radius: 0 0 15px 15px;
+}
+
+h2 {
+  color: #2e2e3a;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  background: linear-gradient(to right, #4b0082, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about, .contact {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.about ul li, .project a {
+  background-color: #f8e1ff;
+  transition: all 0.3s ease;
+}
+
+.about ul li:hover, .project a:hover {
+  background-color: #ffe1fa;
+  color: #6a0dad;
+}
+
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.project {
+  flex: 1 1 30%;
+  background: linear-gradient(to bottom right, #ffffff, #ffe3f3);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project img {
+  margin-bottom: 15px;
+  width: 80px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.contact a {
+  display: inline-block;
+  margin: 10px 15px;
+  color: #6a0dad;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #ff69b4;
+}
+
+footer {
+  background: linear-gradient(to right, #434343, #000000);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1rem;
+  margin-top: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 1px 5px rgba(255,255,255,0.1);
+}
+
+@media screen and (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2.2rem;
+  }
+  header.hero p {
+    font-size: 1.1rem;
+  }
+  .project-section {
+    flex-direction: column;
+  }
+  .project {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 30px); }
+  100% { transform: translate(0, 0); }
